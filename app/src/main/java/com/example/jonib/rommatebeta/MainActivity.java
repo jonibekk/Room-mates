@@ -16,9 +16,11 @@ public class MainActivity extends AppCompatActivity {
         ViewPager viewPager = findViewById(R.id.pager);
         com.example.jonib.rommatebeta.PagerAdapter adapter = new com.example.jonib.rommatebeta.PagerAdapter(getSupportFragmentManager());
 
-        adapter.addFragment(new RoomsFragment(), "FRAG1");
-        adapter.addFragment(new StatisticsFragment(), "FRAG2");
-        adapter.addFragment(new AboutFragment(), "FRAG3");
+        adapter.addFragment(new RoomsFragment(), "Rooms");
+        adapter.addFragment(new StatisticsFragment(), "Stat.s");
+        adapter.addFragment(new AboutFragment(), "About");
+        adapter.addFragment(new AboutFragment(), "In App");
+
         viewPager.setAdapter(adapter);
 
         TabLayout tabLayout = findViewById(R.id.tabs);
