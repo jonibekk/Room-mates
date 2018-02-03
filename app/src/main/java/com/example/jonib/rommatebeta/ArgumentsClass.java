@@ -1,7 +1,5 @@
 package com.example.jonib.rommatebeta;
 
-import android.widget.TextView;
-
 /**
  * Created by jonib on 2/3/2018.
  */
