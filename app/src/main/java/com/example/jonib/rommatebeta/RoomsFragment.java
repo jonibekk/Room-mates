@@ -1,6 +1,8 @@
 package com.example.jonib.rommatebeta;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -29,7 +31,7 @@ public class RoomsFragment extends Fragment {
         layoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(layoutManager);
 
-        ArrayList<ArgumentsClass> object = new ArrayList<>();
+        final ArrayList<ArgumentsClass> object = new ArrayList<>();
 
         object.add(new ArgumentsClass(R.drawable.ic_launcher_foreground, "Room-510", "4", "Hello There!"));
         object.add(new ArgumentsClass(R.drawable.ic_launcher_foreground, "Room-511", "6", "Hello Worlds!"));
@@ -44,7 +46,9 @@ public class RoomsFragment extends Fragment {
 
                     @Override
                     public void onItemClick(View view, int position) {
-                        Toast.makeText(getContext(), "OnItemClick Works", Toast.LENGTH_LONG).show();
+                        Intent intent = new Intent(getActivity(), ExpenseProperty.class);
+                        intent.putExtra("title", object.get(position).getRoom_name());
+                        startActivity(intent);
                     }
 
                     @Override
